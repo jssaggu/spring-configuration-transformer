@@ -1,23 +1,50 @@
 <html>
 <head>
-    <title>${title}</title>
+    <title>My ${title}</title>
     <style>
         h1 {
             color: darkgrey;
-            font-family: verdana;
-            font-size: 200%;
+            font-family: verdana,serif;
+            font-size: 140%;
         }
-
-        section, table, tr, td {
-            font-family: Arial;
-            font-size: 100%;
+        section,table,tr,th,td,p {
+            font-family: verdana,serif;
+            font-size: 0.92em;
         }
-
-        table, th, td {
-            border: 1px solid black;
+        table {
             border-collapse: collapse;
+            width: auto;
+            min-width: 100%;
         }
-
+        td,th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        tr td:first-child {
+            white-space: nowrap;
+        }
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #007CB3;
+            color: white;
+        }
+        table caption {
+            text-align: left;
+            font-size: 0.8em;
+            padding: 10px 0;
+            color: gray;
+        }
+        .wrapper {
+            overflow-x: scroll;
+        }
     </style>
 </head>
 <body>
