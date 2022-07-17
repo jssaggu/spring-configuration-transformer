@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sagguuk</groupId>
+    <artifactId>spring-configuration-transformer-maven-plugin-tester</artifactId>
+    <name>spring-configuration-transformer-maven-plugin-tester</name>
+    <url>http://saggu.uk</url>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>com.sagguuk</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>spring-configuration-transformer</artifactId>
+    </parent>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${org-springframework-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${org-springframework-boot.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <version>${org-projectlombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${org-springframework-boot.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.sagguuk</groupId>
+                <artifactId>spring-configuration-transformer-maven-plugin</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>spring-configuration-transformer</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <outputTemplateFileName>${project.build.resources[0].directory}/templates/my-application-metadata.ftl</outputTemplateFileName>
+                    <metadataJsonFileName>${project.build.directory}/classes/META-INF/spring-configuration-metadata.json</metadataJsonFileName>
+                    <outputFileName>my-report.html</outputFileName>
+                    <reportTitle>Configuration Processor Maven Plugin Tester Application</reportTitle>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

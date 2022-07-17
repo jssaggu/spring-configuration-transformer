@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-<h1>${title}</h1>
+<h1>My own ${title}</h1>
 
 <#if metadata.items??>
     <section>

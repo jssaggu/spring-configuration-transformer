@@ -6,11 +6,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sagguuk</groupId>
     <!--  mvn groupId:artifactId:version:goal -->
-    <artifactId>properties-processor-maven-plugin</artifactId>
+    <artifactId>spring-configuration-transformer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>maven-plugin</packaging>
+    <packaging>pom</packaging>
 
-    <name>properties-processor-maven-plugin Maven Mojo</name>
+    <name>spring-configuration-transformer</name>
     <url>http://saggu.uk</url>
 
     <properties>
@@ -24,79 +24,13 @@
         <org-springframework.version>5.3.21</org-springframework.version>
         <org-springframework-boot.version>2.7.1</org-springframework-boot.version>
         <org-freemarker.version>2.3.31</org-freemarker.version>
+        <org-projectlombok.version>1.18.22</org-projectlombok.version>
+        <mockito.junit.version>4.6.1</mockito.junit.version>
     </properties>
 
-    <dependencies>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${org-springframework.version}</version>
-<!--            <scope>provided</scope>-->
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <version>${org-springframework-boot.version}</version>
-<!--            <scope>provided</scope>-->
-        </dependency>
-
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>${org-freemarker.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-plugin-api</artifactId>
-            <version>${maven-plugin-api.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.maven.plugin-tools</groupId>
-            <artifactId>maven-plugin-annotations</artifactId>
-            <version>${maven-plugin.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-project</artifactId>
-            <version>${maven-project.version}</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-plugin-plugin</artifactId>
-                <version>${maven-plugin.version}</version>
-                <configuration>
-                    <!-- see http://jira.codehaus.org/browse/MNG-5346 -->
-                    <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
-                </configuration>
-
-                <executions>
-                    <execution>
-                        <id>mojo-descriptor</id>
-                        <goals>
-                            <goal>descriptor</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-        <plugin>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>${project.artifactId}</artifactId>
-            <version>${project.version}</version>
-        </plugin>
-
-        </plugins>
-    </build>
+    <modules>
+        <module>spring-configuration-transformer-maven-plugin</module>
+        <module>spring-configuration-transformer-maven-plugin-tester</module>
+    </modules>
 
 </project>
