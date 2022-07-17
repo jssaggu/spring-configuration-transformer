@@ -7,7 +7,7 @@
     <groupId>com.sagguuk</groupId>
     <!--  mvn groupId:artifactId:version:goal -->
     <artifactId>spring-configuration-transformer</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>pom</packaging>
 
     <name>spring-configuration-transformer</name>
@@ -32,5 +32,24 @@
         <module>spring-configuration-transformer-maven-plugin</module>
         <module>spring-configuration-transformer-maven-plugin-tester</module>
     </modules>
+
+    <profiles>
+        <profile>
+            <id>github</id>
+            <activation>
+                <property>
+                    <name>useGitHubPackages</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Packages</name>
+                    <url>https://maven.pkg.github.com/jssaggu/spring-configuration-transformer</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 
 </project>
