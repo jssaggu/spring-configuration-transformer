@@ -1,5 +1,8 @@
 # Spring Configuration Transformer Maven Plugin
 
+![Java Maven CI](https://github.com/jssaggu/spring-configuration-transformer/actions/workflows/maven.yml/badge.svg)
+
+
 A maven plugin to automatically transform Spring configuration files to html or markdown output.
 
 ## Maven Plugin Repo
