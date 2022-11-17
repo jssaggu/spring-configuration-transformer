@@ -22,7 +22,7 @@
         <maven-plugin.version>3.6.4</maven-plugin.version>
         <maven-plugin-api.version>3.8.6</maven-plugin-api.version>
         <maven-project.version>2.2.1</maven-project.version>
-        <org-springframework.version>5.3.22</org-springframework.version>
+        <org-springframework.version>6.0.0</org-springframework.version>
         <org-springframework-boot.version>2.7.2</org-springframework-boot.version>
         <org-freemarker.version>2.3.31</org-freemarker.version>
         <org-projectlombok.version>1.18.24</org-projectlombok.version>
